@@ -56,7 +56,28 @@ h2 {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     background: #fff;
-    padding: 30px;
+    padding-left: 30px !important;
+    width: 90%;
+    max-width: 85%;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    text-align: left;
+    height: 50vh;
+    margin-bottom: 30px !important;
+}
+
+.messageList{
+    overflow-y: scroll;
+    max-height: 60%;
+}
+
+.newMessage {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding-top: 30px !important;
     width: 90%;
     max-width: 85%;
     position: relative;

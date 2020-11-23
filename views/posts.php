@@ -64,6 +64,16 @@
             <div class="wrapper fadeInDown">
                 <div class="messageView">
                     <h2 class="active">Posts</h2>
+                    <div class="messageList">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+                <div class="newMessage">
+                    <form action="">
+                        <input type="text">
+                        <input type="submit" value="Post">
+                    </form>
                 </div>
             </div>
         </div>
