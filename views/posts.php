@@ -1,5 +1,5 @@
 <?php 
-
+    session_start();
     if(!isset($_SESSION["user"])){
         $redirect_url = "http://".gethostname().":".$_SERVER['SERVER_PORT']."/twitthor/";
         header("Location: $redirect_url");
@@ -60,19 +60,10 @@
                 return $data;
             }
         ?>
-        <div class="container ml-50 mr-50">
+        <div class="container ml-30 mr-30">
             <div class="wrapper fadeInDown">
-                <div id="formContent">
-                    <!-- Tabs Titles -->
-                    <h2 class="active">Login</h2>
-                    <!-- Login Form -->
-                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                        <span class = "error">* <?php echo $usernameError;?></span>
-                        <input type="text" class="fadeIn first" id="username" name="username" placeholder="Username" value="<?php echo $user->get_username() != "" ? $user->get_username() : '';?>"><br>
-                        <span class = "error">* <?php echo $passwordError;?></span>
-                        <input type="password" class="fadeIn fourth" id="password" name="password" placeholder="Password" value="<?php echo $user->get_password() != "" ? $user->get_password() : '';?>">
-                        <input type="submit" class="fadeIn fourth" value="Sign In">
-                    </form>
+                <div class="messageView">
+                    <h2 class="active">Posts</h2>
                 </div>
             </div>
         </div>

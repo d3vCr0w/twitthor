@@ -29,8 +29,7 @@
         }
 
         public function login($user){
-            session_start();
-            $data_file =  file_get_contents('../data/data.json');
+            $data_file = file_get_contents('../data/data.json');
             $json_file = json_decode($data_file, true);
             $user_match = array_filter($json_file, function($data_user) use($user){
                 return $data_user["user"]["username"] == $user->username && $data_user["user"]["password"] == $user->password;
@@ -39,10 +38,13 @@
                 //Message
             }else{
                 session_destroy();
+                session_start();
                 $user_id = array_keys($user_match)[0];
                 $user_match = ($user_match[$user_id]);
                 $_SESSION["user"] = $user_id;
                 $_SESSION["username"] = $user_match["user"]["username"];
+                $redirect_url = "http://".gethostname().":".$_SERVER['SERVER_PORT']."/twitthor/views/posts.php";
+                header("Location: $redirect_url");
                 exit();
             }
             
